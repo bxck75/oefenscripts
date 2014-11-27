@@ -11,10 +11,10 @@
 
 		function dbconnect($file = '', $line = 0)
 		{
-			$host ="localhost";
-			$user ="boudewijn_main";
-			$pass ="0o9i8u7y";
-			$base ="boudewijn_OOP";
+			$host =DB_HOST;
+			$user =DB_USERNAME;
+			$pass =DB_PASS;
+			$base =DB_NAME;
 			if(!$this->dbc = @mysql_connect($host, $user, $pass))
 			{
                 $error = 'Cannot connect to MySQL server. In file '.$file.' in line '.$line.'. Date: '.date('Y-m-d H:i:s').'<br />'.CRLF;

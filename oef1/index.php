@@ -14,6 +14,9 @@ function __autoload($class_name)
         require_once "classes/class.$class_name.php";
     }
 }
-$db = new dbconnect();
-$sql = "SHOW PROCESSLIST";
-$result = $db->fetch_array($sql);
+$sql = "SHOW COLUMNS FROM oef1_tblTest";
+$result = $dbc->fetch_array($sql);
+HeFu::var_drop($result);
+$sql = "INSERT INTO `oef1_tblTest`(`titel`, `inhoud`, `datum`) "
+        . "VALUES ('test3', 'adqadadawdawd', '2014-11-27 00:00:00');";
+$dbc->query($sql);
