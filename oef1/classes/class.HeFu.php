@@ -1,25 +1,26 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 /**
  * Description of class
  *
- * @author Desktop
- */
+ *
+ *####Helpfuncties####
+ *
+ *
+ * @author B.X.C.Kooij
+ **/
+
 class HeFu {
-    public $data = '';
-    public function var_drop($data,$pre = true,$die = false){
-        //$this->data = $data;
+    public $data ;
+    public function vardrop($data,$pre = true,$die = false){
         if($pre == true){echo '<pre>';}
-          var_dump($data);if($die == true){die('Killed on request!');}
+        var_dump($data);
         if($pre == true){echo '</pre>';}
-        
+        if($die == true){die('Killed on request!');}
     }
-//put your code here
+    public function schrijf($data,$pre = true,$die = false){
+        if($pre == true){echo '<pre>';}
+        echo $data;
+        if($pre == true){echo '</pre>';}
+        if($die == true){die('Killed on request!');}
+    }
 }

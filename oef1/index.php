@@ -14,9 +14,14 @@ function __autoload($class_name)
         require_once "classes/class.$class_name.php";
     }
 }
-$sql = "SHOW COLUMNS FROM oef1_tblTest";
+//$sql = "SHOW COLUMNS FROM oef1_tblTest";
+//$result = $dbc->fetch_array($sql);
+//HeFu::vardrop($result);
+$sql = "SELECT max(id) as highest_id FROM oef1_tblTest";
 $result = $dbc->fetch_array($sql);
-HeFu::var_drop($result);
+//HeFu::vardrop($result);
+$result = $result['highest_id'] + 1;
+HeFu::schrijf($result);
 $sql = "INSERT INTO `oef1_tblTest`(`titel`, `inhoud`, `datum`) "
-        . "VALUES ('test3', 'adqadadawdawd', '2014-11-27 00:00:00');";
+        . "VALUES ('entry #".$result."', 'testing', '2014-11-27 00:00:00');";
 $dbc->query($sql);
