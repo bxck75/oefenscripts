@@ -5,14 +5,25 @@ require('includes/include.Settings.php');
         <head>
             <link rel="stylesheet" href="css/style.css">
             <script src="js/jquery-1.11.1.min.js"></script>
+            
+            <script>
+                $(document).ready(function(){
+                  $("input").focus(function(){
+                    $(this).css("background-color","#cccccc");
+                  });
+                  $("input").blur(function(){
+                    $(this).css("background-color","#ddd");
+                  });
+                });
+                $(document).ready(function(){
+                  $("login-form").focus(function(){
+                    $(this).css("background-color","#fff");
+                  });
+                });
+            </script>  
         </head>
-        <script>
-$(document).ready(function(){
-  $("#login-form").fadeIn();
-  //$("#msg").fadeIn("slow");
-  $("#login-form").fadeIn(3000);
-});
-</script>
+
+
 <?php
 if(isset($_GET['des'])){ 
     User::logout(); 
