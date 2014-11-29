@@ -18,6 +18,6 @@ class administrator implements system_user_interface{
 			echo "admin is uitgelogd";
 		}
 		public function whois(){
-			echo "ik ben een admin";
+			echo "Admin";
 		}
 	}

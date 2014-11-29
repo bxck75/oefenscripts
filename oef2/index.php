@@ -3,8 +3,28 @@ require('includes/include.Settings.php');
 ?>
 
         <head>
+            	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Oef 2 :)</title>
+	<meta name="oef2" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+            <link rel="stylesheet" href="css/base.css">
+            <link rel="stylesheet" href="css/skeleton.css">
+            <link rel="stylesheet" href="css/layout.css">
             <link rel="stylesheet" href="css/style.css">
-            <link rel="stylesheet" href="css/simplegrid.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
             <script src="js/jquery-1.11.1.min.js"></script>
             
             <script>
@@ -26,6 +46,7 @@ require('includes/include.Settings.php');
 
 
 <?php
+//trigger session destroy
 if(isset($_GET['des'])){ 
     User::logout(); 
     ?>
@@ -35,29 +56,36 @@ if(isset($_GET['des'])){
     </script>
     <?php 
 }
+//trigger login
 if(isset($_POST['login'])){
     $user = User::system_user($_POST['username'],$_POST['password']);
 }
 ?>
-<div id="msg"><?php echo $msg ?></div> 
+<div id="main-wrapper" class="container nine columns">
+    <div id="msg"><?php echo $msg ?></div> 
 <?php
+//trigger content on session HYPER
 if(!isset($_SESSION['HYPER'])){
+    //no session HYPER so showlogin screen
     User::build_login();
 }else{
+    //Session HYPER set...knock knock Whois()
     if($_SESSION['HYPER'] == 'Yes'){
         //admin content
-        //
-        //
-        //
         //$user->whois();
+        include 'templates/template.toplinks.php';
+        include 'includes/include.admincontent.php';
     }else{
-    //user content
-    $user->whois();
+        //user content
+        //$user->whois();
+        include 'templates/template.toplinks.php';
+        include 'includes/include.gebruikercontent.php';
+    
     }    
 //unlogged content        
 ?>
-<a href="<?php DOCUMENTROOT; ?>">HOME</a>
-<a href="index.php?des">Destroy</a>
+
+    
 <?php       
     
 }
