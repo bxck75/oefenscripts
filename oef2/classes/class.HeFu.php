@@ -10,7 +10,6 @@
  **/
 
 class HeFu {
-    public $data ;
     public function vardrop($data,$pre = true,$die = false){
         if($pre == true){echo '<pre>';}
         var_dump($data);
