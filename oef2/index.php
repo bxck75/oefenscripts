@@ -4,6 +4,7 @@ require('includes/include.Settings.php');
 
         <head>
             <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/simplegrid.css">
             <script src="js/jquery-1.11.1.min.js"></script>
             
             <script>
