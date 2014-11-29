@@ -23,7 +23,8 @@ class User {
         }elseif($result[0] > 1){
                 return new gebruiker($username,$password);
         }else{
-            echo ('Er is geen Account gevonden');
+            $msg = 'Er is geen Account gevonden';
+            return $msg;
         }
         unset($dbc);
     }

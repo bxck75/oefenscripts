@@ -5,10 +5,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */-->
-<ul id="login-form" >
+<div id="login-form" >
 <form action="" method="post" >
     <ol><input type="text" name="username" /></ol>
     <ol><input type="text" name="password" /></ol>
-    <ol><input type="submit" name="login" /></ol>
+    <ol><input id="form1Submit" type="submit" name="login" /></ol>
 </form>
-</ul>
+</div>
