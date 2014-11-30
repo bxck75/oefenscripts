@@ -14,7 +14,7 @@
  */
 class User {
     function system_user($username,$password){
-        $sql = "SELECT id as id FROM Gebruikers WHERE username ='".addslashes($username)."' and password=md5('".addslashes($password)."')";
+        $sql = "SELECT id as id FROM oef2_Gebruikers WHERE username ='".addslashes($username)."' and password=md5('".addslashes($password)."')";
         $dbc = new dbconnect() ;
         $result = $dbc->fetch_array($sql);
         //HeFu::vardrop($result);

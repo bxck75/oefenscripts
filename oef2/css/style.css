@@ -34,11 +34,20 @@ form{
     float:right;
 }
 .home{
-    float:left;
+    float:right;
     margin:4px;
 }
 .logout{
     float:right;
     margin:4px;
+}
+#menu{
+    display:none;
+}
+#navigatie{
+   float:left; 
+}
+.links {
+    
 }
 

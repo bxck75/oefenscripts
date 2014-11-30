@@ -20,12 +20,15 @@ require('includes/include.Settings.php');
             <link rel="stylesheet" href="css/skeleton.css">
             <link rel="stylesheet" href="css/layout.css">
             <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/slicknav.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
+        <!-- js scripts -->
             <script src="js/jquery-1.11.1.min.js"></script>
+            <script src="js/jquery.slicknav.js"></script>
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
             
             <script>
                 $(document).ready(function(){
@@ -34,11 +37,6 @@ require('includes/include.Settings.php');
                   });
                   $("input").blur(function(){
                     $(this).css("background-color","#ddd");
-                  });
-                });
-                $(document).ready(function(){
-                  $("login-form").focus(function(){
-                    $(this).css("background-color","#fff");
                   });
                 });
             </script>  
@@ -73,12 +71,14 @@ if(!isset($_SESSION['HYPER'])){
     if($_SESSION['HYPER'] == 'Yes'){
         //admin content
         //$user->whois();
-        include 'templates/template.toplinks.php';
+        //include 'templates/template.toplinks.php';
+        echo '<span class="sixteen columns" id="navigatie"></span>';
         include 'includes/include.admincontent.php';
     }else{
         //user content
         //$user->whois();
-        include 'templates/template.toplinks.php';
+        //include 'templates/template.toplinks.php';
+        echo '<span class="sixteen columns" id="navigatie"></span>';
         include 'includes/include.gebruikercontent.php';
     
     }    
