@@ -40,8 +40,12 @@ class Nav {
         <?php
         //include 'templates/template.menu.php';
     }
-    public function haalcotnent($CID){
+    function GETcontent($CID){
+        $data = new datahandler();
+        $content= $data->allecontenthalen(addslashes($CID));
+        HeFu::vardrop($content); 
         
     }
+    
 
 }

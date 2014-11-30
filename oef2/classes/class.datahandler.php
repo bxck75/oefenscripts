@@ -15,7 +15,7 @@ class datahandler {
     function allecontenthalen($cid){
         $dbc = new dbconnect() ;
         //using a simple query and fetch_array method
-        $query = "SELECT * FROM oef2_Content WHERE id=".$cid.";";
+        echo $query = "SELECT * FROM oef2_Content WHERE id=".$cid.";";
         $result = $dbc->query($query);
         while($record = $result->fetch_array()){
         $array[] = $record;
