@@ -1,11 +1,14 @@
 <?php
 /**
- * Description of class
- *
- *
- *####Helpfuncties####
- *
- *
+ *####Helpfuncties#### 
+ * 
+ *vardrop is een luxe var_dump
+ * usage   HeFu::vardrop($data,false,true)
+ * 
+ *schrijf is een luxe echo 
+ * usage   HeFu::schrijf($data,false,true)
+ * 
+ * ####################
  * @author B.X.C.Kooij
  **/
 

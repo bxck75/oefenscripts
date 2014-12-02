@@ -72,7 +72,7 @@ if(!isset($_SESSION['HYPER'])){
         //admin content
         //$user->whois();
         //include 'templates/template.toplinks.php';
-        echo '<span class="sixteen columns" id="navigatie"></span>';
+        echo '<span class="four columns" id="navigatie"></span>';
         include 'includes/include.admincontent.php';
     }else{
         //user content

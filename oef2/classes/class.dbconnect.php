@@ -65,6 +65,11 @@
 			$result = $this->query($query);
 			return $result->fetch_array($type);
 		}
+		function show_col($table, $type = SQL_ASSOC)
+		{
+			$result = $this->query("SHOW COLUMNS FROM $table");
+			return $result->fetch_array($type);
+		}
 		
 		function first_cell($query)
 		{
@@ -72,6 +77,7 @@
 			$row = $result->fetch_array(SQL_NUM);
 			return $row[0];
 		}
+                
 		
 		function change_base($base, $file = '', $line = 0)
 		{
