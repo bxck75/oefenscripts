@@ -7,8 +7,8 @@ require('includes/include.Settings.php');
   ================================================== -->
 	<meta charset="utf-8">
 	<title>Oef 2 :)</title>
-	<meta name="oef2" content="">
-	<meta name="author" content="">
+	<meta name="oef2" content="oefening 2 lol ">
+	<meta name="author" content="bxck">
 
 	<!-- Mobile Specific Metas
   ================================================== -->

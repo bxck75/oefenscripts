@@ -47,7 +47,7 @@ form{
 #navigatie{
     background-color:#4c4c4c;
     float:left; 
-    height:100%;
+    min-height:60px;
 }
 .links {
     
