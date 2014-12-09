@@ -15,6 +15,16 @@ class datahandler {
         }
         return $array;
     }
+    
+    function countcontent($CID){
+        $sql = "SELECT * FROM oef2_Content WHERE CID = ".$CID.";";
+        $dbc = new dbconnect() ;
+        $result = $dbc->query($sql);
+        $count = $result->num_rows();
+        return $count;
+        
+    }
+    
     function get_maxid(){
         $dbc = new dbconnect() ;
         //using a simple query and fetch_array method
@@ -34,11 +44,19 @@ class datahandler {
         }
         return $array;
     }
-    function iteminschieten($titel,$inhoud){
+    function naviteminschieten($titel,$cid,$ouder,$folder,$hyper){
         $dbc = new dbconnect() ;
         //using a simple query and fetch_array method
-        $query = "INSERT INTO oef2_Nav_items(`id` ,`naam` ,`cont_id` ,`ouder_id` ,`HYPER`)"
-                . "VALUES ('','".$titel."','".$inhoud."',CURDATE(),'');";
+        $query = "INSERT INTO oef2_Nav_items(`naam`,`cont_id`,`ouder_id`,`folder`,`HYPER`)"
+                . "VALUES ('".$titel."','".$cid."','".$ouder."','".$folder."','".$hyper."');";
+        $result = $dbc->query($query);
+        
+    }
+    function contiteminschieten($titel,$inhoud,$cid){
+        $dbc = new dbconnect() ;
+        //using a simple query and fetch_array method
+        $query = "INSERT INTO oef2_Content(`CID` ,`Titel` ,`Inhoud`)"
+                . "VALUES ('".$cid."','".$titel."','".$inhoud."');";
         $result = $dbc->query($query);
         
     }

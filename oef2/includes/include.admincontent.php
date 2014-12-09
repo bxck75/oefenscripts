@@ -18,18 +18,19 @@ if(isset($_GET['CID'])){
         //HeFu::vardrop($c_item);
         extract($c_item,EXTR_PREFIX_ALL,'Content');
         //echo $Content_Titel;
+        datahandler::naviteminschieten('css',7,6,0,1);
         ?>
         <div class='six columns admin-content'>
             <table id="t01">
                 <tr>
-                    <th><span class='six columns content-title'><h1><?=$Content_Titel;?></h1></span></th>
+                    <th><span class='six columns content-title'><h3><?=$Content_Titel;?></h3></span></th>
                 </tr>
                 <tr>
-                    <td class='offset-by-one five columns'><span class='six columns content-title'><pre><code><?php echo addslashes($Content_Inhoud); ?></code></pre></span></td>
+                    <td class=' five columns'>
+                        <span class='six columns content-inhoud'><pre><code><?php echo addslashes($Content_Inhoud); ?></code></pre></span>
+                    </td>
                 </tr>
-            </table> 
-            
-            
+            </table>
         </div>
 
 

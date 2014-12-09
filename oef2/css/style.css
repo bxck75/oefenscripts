@@ -45,10 +45,14 @@ form{
     display:none;
 }
 #navigatie{
-   float:left; 
-   height:100%;
+    background-color:#4c4c4c;
+    float:left; 
+    height:100%;
 }
 .links {
     
 }
-
+#t01{
+    border:1px solid black;
+    margin-left:-16px;
+}

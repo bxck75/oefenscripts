@@ -28,6 +28,7 @@ require('includes/include.Settings.php');
         <!-- js scripts -->
             <script src="js/jquery-1.11.1.min.js"></script>
             <script src="js/jquery.slicknav.js"></script>
+            <script src="js/own.popup.js"></script>
             <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
             
             <script>
