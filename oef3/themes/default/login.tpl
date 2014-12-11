@@ -12,7 +12,7 @@
                 </tr>
                 <tr>
                     <td>
-                            <input type="submit" name="submit" value="Inloggen" />
+                        <input type="submit" name="submit" value="Inloggen" />
                     </td>
                 </tr>
         </table>
