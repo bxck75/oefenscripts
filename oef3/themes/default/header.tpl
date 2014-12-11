@@ -1,6 +1,5 @@
 <body>
 	<div id="header">
-		header
 	</div>
-	<h1><?php echo $this->title; ?></h1>
-	<div id="container">
+    <h1><center><?php echo $this->title; ?></center></h1>
+	<div class="container" id="container">
