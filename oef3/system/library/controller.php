@@ -9,12 +9,23 @@ class Controller{
 	}
 	
 	public function loadModel($module){
-		if(file_exists('./module/'.strtolower($module).'/'.strtolower($module).'Model.php')){
-			require_once('./module/'.strtolower($module).'/'.strtolower($module).'Model.php');
+                // kijk of de module in de THEME bestaat en laad deze
+		if(file_exists('./module/'.THEME.'/'.strtolower($module).'/'.strtolower($module).'Model.php')){
+                    
+			require_once('./module/'.THEME.'/'.strtolower($module).'/'.strtolower($module).'Model.php');
 			
 			$modelName = strtolower($module).'Model';
 			
 			$this->model = new $modelName();
+                // anders halen we die uit de default core        
+                }elseif(file_exists('./module/default/'.strtolower($module).'/'.strtolower($module).'Model.php')){
+                    
+			require_once('./module/default/'.strtolower($module).'/'.strtolower($module).'Model.php');
+			
+			$modelName = strtolower($module).'Model';
+			
+			$this->model = new $modelName();
+                // anders moet de programmeur nog een stukkie bij kloppen        
 		}else{
 			echo 'Kan model ./module/'.strtolower($module).'/'.strtolower($module).'Model.php niet vinden';
 		}
@@ -28,10 +39,10 @@ class Controller{
 	}
 	
 	public function loadFile($file){
-		if(file_exists('./themes/'.THEME.'/'.$file)){
-			include('./themes/'.THEME.'/'.$file);
-		}elseif(file_exists('./themes/default/'.$file)){
-			include('./themes/default/'.$file);
+		if(file_exists('./themes/'.THEME.'/templates/'.$file)){
+			include('./themes/'.THEME.'/templates/'.$file);
+		}elseif(file_exists('./themes/default/templates/'.$file)){
+			include('./themes/default/templates/'.$file);
 		}else{
 			echo 'Kan view '.$file.' niet vinden';
 		}

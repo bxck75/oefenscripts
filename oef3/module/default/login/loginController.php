@@ -2,7 +2,7 @@
 class loginController extends Controller{
 	public function index(){
 		$this->setTitle('Login');
-		$this->render('login.tpl');
+		$this->render('login/login.tpl');
 	}
 	
 	public function login(){

@@ -5,7 +5,7 @@ class eventController extends Controller{
 		$this->setTitle('Overzicht events');
 		$this->loadModel('event');
 		$this->events = $this->model->getEvents();
-		$this->render('event_overview.tpl');
+		$this->render('event/event_overview.tpl');
 	}
         // 1 event bekijken
 	public function oneEvent(){
@@ -13,12 +13,12 @@ class eventController extends Controller{
                 $this->id = $_GET['event_id'];
                 $this->loadModel('event');
                 $this->event = $this->model->getEvent($this->id);
-                $this->render('event_viewone.tpl');
+                $this->render('event/event_viewone.tpl');
 	}
         // event formulier afbeelden
 	public function addEvent(){
 		$this->setTitle('Voeg event toe');
-                $this->render('event_add.tpl');
+                $this->render('event/event_add.tpl');
 	}
         //
         public function bewerkEvent(){
@@ -26,7 +26,7 @@ class eventController extends Controller{
                 $this->id = $_GET['event_id'];
                 $this->loadModel('event');
                 $this->updated_event = $this->model->getEvent($this->id);
-                $this->render('event_bewerk.tpl');
+                $this->render('event/event_bewerk.tpl');
 	}
         // event verwijderen
 	public function deleteEvent(){
@@ -34,7 +34,7 @@ class eventController extends Controller{
                 $this->id = $_GET['event_id'];
                 $this->loadModel('event');
 		$this->deleted_event = $this->model->deleteEvent($this->id);
-                $this->render('event_delete.tpl');
+                $this->render('event/event_delete.tpl');
 	}
         //  event inserten in de database
 	public function insertEvent(){
@@ -45,18 +45,18 @@ class eventController extends Controller{
                 $this->price = $_POST['price'];
                 $this->loadModel('event');
 		$this->added_event = $this->model->insertEvent($this->name,$this->startdate,$this->enddate,$this->price);
-                $this->render('event_added.tpl');
+                $this->render('event/event_added.tpl');
 	}
         //  event updaten in de database
 	public function updateEvent(){
 		$this->setTitle('Update event');
                 $this->name = $_POST['name'];
-                $this->id = $_POST['event_id'];
+                $this->id = $_POST['event/event_id'];
                 $this->startdate = $_POST['start_date'];
                 $this->enddate = $_POST['end_date'];
                 $this->price = $_POST['price'];
                 $this->loadModel('event');
 		$this->added_event = $this->model->updateEvents($this->id,$this->name,$this->startdate,$this->enddate,$this->price);
-                $this->render('event_bewerkt.tpl');
+                $this->render('event/event_bewerkt.tpl');
 	}
 }
