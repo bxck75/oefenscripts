@@ -10,7 +10,7 @@ class eventModel extends Model{
 	}
         // voeg een event toe
 	public function insertEvent($name,$startdate,$enddate,$price){
-		echo $sql = "INSERT INTO event(name,start_date,end_date,price) VALUES ('".$name."','".$startdate."','".$enddate."','".$price."');";
+		$sql = "INSERT INTO event(name,start_date,end_date,price) VALUES ('".$name."','".$startdate."','".$enddate."','".$price."');";
 		
 		$result = $this->db->query($sql);
 		

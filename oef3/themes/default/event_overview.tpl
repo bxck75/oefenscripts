@@ -1,7 +1,6 @@
 <div>
     <table class="list">
         <thead>
-
             <tr>
                 <td>Event</td>
                 <td>Startdatum</td>
@@ -20,7 +19,7 @@
             </tr>
         <?php } ?>
             <tr colspan="5">
-                <td class="offset-by-six right"><a href="index.php?route=event/addEvent">Event Toevoegen</a></td>
+                <td class="right"><a href="index.php?route=event/addEvent">Event Toevoegen</a></td>
             </tr>
     </table>
 </div>
