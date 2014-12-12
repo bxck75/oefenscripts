@@ -25,8 +25,8 @@ class eventModel extends Model{
 		return $this->db->countAffected();
 	}
         //  update an event op id
-	public function updateEvents($event_id,$item,$new_data){
-		$sql = "UPDATE event SET '".$item."'='".$new_data."' WHERE event_id='".$event_id."' ;";
+	public function updateEvents($event_id,$name,$startdate,$enddate,$price){
+		$sql = "UPDATE event SET name='".$name."',start_date='".$startdate."',end_date='".$enddate."',price='".$price."'  WHERE event_id=".$event_id.";";
 		
 		$result = $this->db->query($sql);
 		
@@ -34,7 +34,7 @@ class eventModel extends Model{
 	}
         // check een event op id
 	public function getEvent($event_id){
-		$sql = "SELECT * FROM event WHERE event_id='".$event_id."'";
+		$sql = "SELECT * FROM event WHERE event_id=".$event_id.";";
 		
 		$result = $this->db->query($sql);
 		
