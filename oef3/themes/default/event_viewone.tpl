@@ -16,5 +16,8 @@
             <td class="right"><?php echo number_format($this->event['price'], 2, ',', '.'); ?></td>
             <td class="right"><a href="index.php?route=event/deleteEvent&event_id=<?php echo $this->event['event_id']; ?>">X</a></td>
         </tr>
+        <tr >
+            <td class="offset-by-six right"><a href="index.php?route=event/overview">Event Overview</a></td>
+        </tr>
     </table>
 </div>
