@@ -10,24 +10,24 @@ class Controller{
 	
 	public function loadModel($module){
                 // kijk of de module in de THEME bestaat en laad deze
-		if(file_exists('./module/'.THEME.'/'.strtolower($module).'/'.strtolower($module).'Model.php')){
+		if(file_exists('./module/'.THEME.'/'.strtolower($module).'/Model.php')){
                     
-			require_once('./module/'.THEME.'/'.strtolower($module).'/'.strtolower($module).'Model.php');
+			require_once('./module/'.THEME.'/'.strtolower($module).'/Model.php');
 			
 			$modelName = strtolower($module).'Model';
 			
 			$this->model = new $modelName();
                 // anders halen we die uit de default core        
-                }elseif(file_exists('./module/default/'.strtolower($module).'/'.strtolower($module).'Model.php')){
+                }elseif(file_exists('./module/default/'.strtolower($module).'/Model.php')){
                     
-			require_once('./module/default/'.strtolower($module).'/'.strtolower($module).'Model.php');
+			require_once('./module/default/'.strtolower($module).'/Model.php');
 			
 			$modelName = strtolower($module).'Model';
 			
 			$this->model = new $modelName();
                 // anders moet de programmeur nog een stukkie bij kloppen        
 		}else{
-			echo 'Kan model ./module/'.strtolower($module).'/'.strtolower($module).'Model.php niet vinden';
+			echo 'Kan model ./module/'.strtolower($module).'/Model.php niet vinden';
 		}
 	}
 	

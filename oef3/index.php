@@ -22,13 +22,13 @@ if(isset($_GET['route']) && $_GET['route'] != ''){
 
 	//controleren of het bestand bestaat en indien wel, includen
 	//anders kunnen we de class niet gebruiken
-	if(file_exists('./module/'.THEME.'/'.$module.'/'.$module.'Controller.php')){
-		require_once('./module/'.THEME.'/'.$module.'/'.$module.'Controller.php');
+	if(file_exists('./module/'.THEME.'/'.$module.'/Controller.php')){
+		require_once('./module/'.THEME.'/'.$module.'/Controller.php');
 		$obj = new $controllerName();
 		$obj->$action();
         // of anders halen we die uit de default      
-        }elseif(file_exists('./module/default/'.$module.'/'.$module.'Controller.php')){
-		require_once('./module/default/'.$module.'/'.$module.'Controller.php');
+        }elseif(file_exists('./module/default/'.$module.'/Controller.php')){
+		require_once('./module/default/'.$module.'/Controller.php');
 		$obj = new $controllerName();
 		$obj->$action();
         // en anders moet de programmeur al weer een stukkie bij kloppen        
